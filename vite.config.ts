@@ -48,6 +48,7 @@ function getVersionInfo(): string {
 }
 
 export default defineConfig({
+	base: "/dadjoke/",
 	build: {
 		outDir: "docs",
 	},

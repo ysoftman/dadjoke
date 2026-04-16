@@ -1,4 +1,3 @@
-import "./style.css";
 import { type Joke, jokes } from "./jokes";
 
 interface IndexedJoke extends Joke {

@@ -1,0 +1,17 @@
+{
+  "name": "dadjoke",
+  "devDependencies": {
+    "@types/bun": "^1.3.12",
+    "vite": "^8.0.8"
+  },
+  "peerDependencies": {
+    "typescript": "^6.0.2"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "type": "module"
+}

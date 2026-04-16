@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="아재개그 모음 - Korean Dad Jokes collection"
+    />
+    <title>윤준영의 아재개그</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😂</text></svg>"
+    />
+    <script>
+      try {
+        var d = localStorage.getItem("dadjoke-dark");
+        if (
+          d === "1" ||
+          (d === null && matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          document.write("<style>.dark-toggle-icon{visibility:hidden}</style>");
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sticky-top">
+        <header>
+          <button
+            type="button"
+            class="random-btn"
+            id="random-btn"
+            aria-label="랜덤 조크 보기"
+            title="랜덤"
+          >
+            🎲
+          </button>
+          <button
+            type="button"
+            class="shuffle-btn"
+            aria-label="카드 순서 섞기"
+            title="섞기"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m18 14 4 4-4 4" />
+              <path d="m18 2 4 4-4 4" />
+              <path
+                d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"
+              />
+              <path d="M2 6h1.972a4 4 0 0 1 3.6 2.2" />
+              <path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="dark-toggle-btn"
+            id="dark-toggle"
+            aria-label="다크모드 전환"
+            title="다크모드"
+          >
+            <span class="dark-toggle-icon" aria-hidden="true"
+              >&#x2600;&#xFE0F;</span
+            >
+          </button>
+          <a
+            class="worldcup-btn"
+            href="https://ysoftman.github.io/worldcup-match"
+            aria-label="월드컵 가상 매치"
+            title="월드컵 가상 매치"
+          >
+            🏆
+          </a>
+          <h1>윤준영의 아재개그</h1>
+          <span class="version" id="version"></span>
+          <p>카드를 클릭해서 정답을 확인하세요</p>
+        </header>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <input
+              type="search"
+              id="search"
+              placeholder="검색어를 입력하세요"
+              aria-label="조크 검색"
+            />
+            <span class="search-count" id="search-count"></span>
+            <button
+              type="button"
+              class="search-clear"
+              id="search-clear"
+              aria-label="검색어 지우기"
+              hidden
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="cards" id="cards" aria-live="polite"></div>
+      </main>
+      <footer>Dad Jokes in Korean</footer>
+    </div>
+
+    <button
+      type="button"
+      class="scroll-top-btn"
+      id="scroll-top"
+      aria-label="맨 위로 이동"
+    >
+      &uarr;
+    </button>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

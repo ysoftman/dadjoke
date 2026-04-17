@@ -6,7 +6,6 @@
 }
 body {
   font-family: "Inter", sans-serif;
-  min-height: 100vh;
   padding: max(2rem, env(safe-area-inset-top))
     max(1rem, env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom))
     max(1rem, env(safe-area-inset-left));
@@ -195,7 +194,6 @@ header p {
 }
 .card:nth-child(even) {
   background: #f8fafc;
-  border-color: #e2e8f0;
 }
 .card-meta {
   margin-bottom: 0.5rem;
@@ -389,6 +387,43 @@ header p {
   outline-offset: 3px;
 }
 
+/* ====================== INLINE RANDOM BUTTON ====================== */
+.inline-random-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.inline-random-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+}
+.inline-random-btn:active {
+  transform: scale(0.96);
+}
+.inline-random-btn:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 3px;
+}
+[data-theme="dark"] .inline-random-btn {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.4);
+}
+[data-theme="dark"] .inline-random-btn:hover {
+  box-shadow: 0 4px 16px rgba(30, 64, 175, 0.5);
+}
+
 /* ====================== FOOTER ====================== */
 footer {
   text-align: center;
@@ -488,7 +523,6 @@ footer {
 }
 [data-theme="dark"] .card:nth-child(even) {
   background: #1a2332;
-  border-color: #2d3a4d;
 }
 [data-theme="dark"] .card-number {
   color: #60a5fa;

@@ -80,9 +80,11 @@ function updateLoadingIndicator(container: HTMLElement) {
 
 	if (currentIndex >= displayJokes.length) {
 		sentinel.textContent = "";
+		(sentinel as HTMLElement).style.display = "none";
 		if (observer) observer.unobserve(sentinel);
 	} else {
 		sentinel.textContent = "Loading...";
+		(sentinel as HTMLElement).style.display = "block";
 	}
 }
 
@@ -190,6 +192,22 @@ function showRandom() {
 	if (countEl) countEl.textContent = "1개";
 
 	resetCards([joke]);
+
+	const container = document.getElementById("cards");
+	if (container) {
+		const btn = document.createElement("button");
+		btn.type = "button";
+		btn.className = "inline-random-btn";
+		btn.textContent = "🎲 다음 랜덤";
+		btn.addEventListener("click", showRandom);
+		const sentinel = container.querySelector(".scroll-sentinel");
+		if (sentinel) {
+			container.insertBefore(btn, sentinel);
+		} else {
+			container.appendChild(btn);
+		}
+	}
+
 	window.scrollTo({ top: 0 });
 }
 

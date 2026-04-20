@@ -242,6 +242,29 @@ function isDarkMode(): boolean {
 	return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
+// --- Always-reveal ---
+function setAlwaysReveal(on: boolean) {
+	const container = document.getElementById("cards");
+	if (container) container.classList.toggle("always-reveal", on);
+
+	const btn = document.getElementById("reveal-toggle");
+	if (btn) btn.setAttribute("aria-pressed", String(on));
+
+	try {
+		localStorage.setItem("dadjoke-always-reveal", on ? "1" : "0");
+	} catch {
+		/* noop */
+	}
+}
+
+function isAlwaysReveal(): boolean {
+	try {
+		return localStorage.getItem("dadjoke-always-reveal") === "1";
+	} catch {
+		return false;
+	}
+}
+
 // --- Init ---
 const cardsEl = document.getElementById("cards");
 if (cardsEl) {
@@ -314,3 +337,13 @@ if (darkToggleBtn) {
 
 // Restore dark mode preference
 setDarkMode(isDarkMode());
+
+// Always-reveal toggle
+const revealToggleBtn = document.getElementById("reveal-toggle");
+if (revealToggleBtn) {
+	revealToggleBtn.addEventListener("click", () => {
+		const on = revealToggleBtn.getAttribute("aria-pressed") === "true";
+		setAlwaysReveal(!on);
+	});
+}
+setAlwaysReveal(isAlwaysReveal());

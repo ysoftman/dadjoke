@@ -245,7 +245,17 @@ function isDarkMode(): boolean {
 // --- Always-reveal ---
 function setAlwaysReveal(on: boolean) {
 	const container = document.getElementById("cards");
-	if (container) container.classList.toggle("always-reveal", on);
+	if (container) {
+		container.classList.toggle("always-reveal", on);
+		// When turning off always-reveal, remove revealed class from all cards
+		if (!on) {
+			const cards = container.querySelectorAll(".card.revealed");
+			cards.forEach((card) => {
+				card.classList.remove("revealed");
+				card.setAttribute("aria-expanded", "false");
+			});
+		}
+	}
 
 	const btn = document.getElementById("reveal-toggle");
 	if (btn) btn.setAttribute("aria-pressed", String(on));

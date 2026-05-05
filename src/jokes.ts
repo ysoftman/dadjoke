@@ -1257,4 +1257,160 @@ export const jokes: Joke[] = [
 		question: "토끼가 여러 마리 모이면?",
 		answer: "토끼군",
 	},
+	{
+		question: "꽃이 제일 좋아하는 벌은?",
+		answer: "재벌",
+	},
+	{
+		question: "눈 깜짝할 사이에 할 수 있는 일은?",
+		answer: "윙크",
+	},
+	{
+		question: "세상에서 가장 달콤한 술은?",
+		answer: "입술",
+	},
+	{
+		question: "남이 이상해야 먹고사는 사람은?",
+		answer: "치과의사",
+	},
+	{
+		question: "우리가 매일 먹는 약은?",
+		answer: "치약",
+	},
+	{
+		question: "세계에서 가장 인기 있는 벌레는?",
+		answer: "스타벅스",
+	},
+	{
+		question: "몸에 안 좋은 청바지는?",
+		answer: "유해진",
+	},
+	{
+		question: "절에 없는 스님은?",
+		answer: "부재중",
+	},
+	{
+		question: "말이 분노하면?",
+		answer: "마리화나",
+	},
+	{
+		question: "커플이 좋아하는 곤충은?",
+		answer: "잠자리",
+	},
+	{
+		question: "신사가 먹는 김치는?",
+		answer: "신사임당",
+	},
+	{
+		question: "자동차가 먹는 밥은?",
+		answer: "카레",
+	},
+	{
+		question: "비가 자기소개하면?",
+		answer: "나비",
+	},
+	{
+		question: "닭이 미용실에 가면?",
+		answer: "파마닭",
+	},
+	{
+		question: "소가 서울 가면?",
+		answer: "소울",
+	},
+	{
+		question: "산타할아버지가 가장 싫어하는 차는?",
+		answer: "싼타페",
+	},
+	{
+		question: "차가 울면 어떤 소리가 날까?",
+		answer: "잉카",
+	},
+	{
+		question: "11월에 뱀이랑 벌이 없는 이유는?",
+		answer: "노뱀벌",
+	},
+	{
+		question: "도박중독자들이 물을 어떻게 마실까?",
+		answer: "홀짝홀짝",
+	},
+	{
+		question: "간장 된장 고추장을 섞어서 먹으면?",
+		answer: "젠장",
+	},
+	{
+		question: "세상에서 가장 차가운 성은?",
+		answer: "찬성",
+	},
+	{
+		question: "이가 세 개 달린 동물은?",
+		answer: "삼겹살",
+	},
+	{
+		question: "항상 미안해하는 동물은?",
+		answer: "오소리",
+	},
+	{
+		question: "둘리가 다니는 고등학교는?",
+		answer: "빙하타고",
+	},
+	{
+		question: "용이 놀랐을 때 하는 말은?",
+		answer: "띠용",
+	},
+	{
+		question: "세종대왕이 자기소개할 때 하는 말은?",
+		answer: "난이도",
+	},
+	{
+		question: "인도에서 제일 힘든 일은?",
+		answer: "카레 운반",
+	},
+	{
+		question: "고양이가 머리를 하면 어떤 소리가 날까?",
+		answer: "미용~ 미용~",
+	},
+	{
+		question: "메이저리그에서 던지는 공은?",
+		answer: "해외직구",
+	},
+	{
+		question: "세상에서 가장 놀라운 거품은?",
+		answer: "언빌리버블",
+	},
+	{
+		question: "세상에서 제일 빠른 떡은?",
+		answer: "헐레벌떡",
+	},
+	{
+		question: "유모차를 타면 긴장되는 이유는?",
+		answer: "애가 타서",
+	},
+	{
+		question: "길거리에서 시주하는 스님은 뭐하는 중일까?",
+		answer: "영업 중",
+	},
+	{
+		question: "학생들이 가장 싫어하는 피자는?",
+		answer: "책피자",
+	},
+	{
+		question: "은행 금고를 1원도 남기지 않고 털면?",
+		answer: "클린턴",
+	},
+	{
+		question: "지니가 노란색이 되면?",
+		answer: "황진이",
+	},
+	{
+		question: "제일 폭발하기 쉬운 나라는?",
+		answer: "부탄",
+	},
+	{
+		question: "숫자 9가 자기소개할 때 하는 말은?",
+		answer: "전9",
+	},
+	{
+		question: "토끼가 쓰는 빗은?",
+		answer: "래빗",
+	},
 ];

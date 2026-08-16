@@ -109,88 +109,6 @@ header p {
 	line-height: 1;
 }
 
-/* ====================== WORLDCUP BUTTON ====================== */
-.worldcup-btn {
-	position: absolute;
-	top: 0.75rem;
-	right: 4rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 44px;
-	height: 44px;
-	padding: 0;
-	background: rgba(255, 255, 255, 0.2);
-	border: none;
-	border-radius: 50%;
-	cursor: pointer;
-	text-decoration: none;
-	font-size: 1.2rem;
-	line-height: 1;
-	z-index: 1;
-	transition:
-		background-color 0.2s ease,
-		transform 0.2s ease;
-}
-.worldcup-btn:hover {
-	background: rgba(255, 255, 255, 0.35);
-	transform: scale(1.1);
-}
-.worldcup-btn:active {
-	transform: scale(0.95);
-}
-.worldcup-btn:focus-visible {
-	outline: 3px solid #fff;
-	outline-offset: 3px;
-}
-[data-theme="dark"] .worldcup-btn {
-	background: rgba(255, 255, 255, 0.1);
-}
-[data-theme="dark"] .worldcup-btn:hover {
-	background: rgba(255, 255, 255, 0.2);
-}
-
-/* ====================== NUMBERBASEBALL BUTTON ====================== */
-.numberbaseball-btn {
-	position: absolute;
-	top: 0.75rem;
-	right: 7.25rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 44px;
-	height: 44px;
-	padding: 0;
-	background: rgba(255, 255, 255, 0.2);
-	border: none;
-	border-radius: 50%;
-	cursor: pointer;
-	text-decoration: none;
-	font-size: 1.2rem;
-	line-height: 1;
-	z-index: 1;
-	transition:
-		background-color 0.2s ease,
-		transform 0.2s ease;
-}
-.numberbaseball-btn:hover {
-	background: rgba(255, 255, 255, 0.35);
-	transform: scale(1.1);
-}
-.numberbaseball-btn:active {
-	transform: scale(0.95);
-}
-.numberbaseball-btn:focus-visible {
-	outline: 3px solid #fff;
-	outline-offset: 3px;
-}
-[data-theme="dark"] .numberbaseball-btn {
-	background: rgba(255, 255, 255, 0.1);
-}
-[data-theme="dark"] .numberbaseball-btn:hover {
-	background: rgba(255, 255, 255, 0.2);
-}
-
 /* ====================== CARDS ====================== */
 .cards {
 	display: flex;
@@ -760,20 +678,6 @@ footer {
 		height: 40px;
 		top: 0.5rem;
 		right: 0.5rem;
-	}
-	.worldcup-btn {
-		width: 40px;
-		height: 40px;
-		top: 0.5rem;
-		right: 3.25rem;
-		font-size: 1rem;
-	}
-	.numberbaseball-btn {
-		width: 40px;
-		height: 40px;
-		top: 0.5rem;
-		right: 6rem;
-		font-size: 1rem;
 	}
 }
 

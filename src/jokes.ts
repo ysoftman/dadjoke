@@ -85,10 +85,6 @@ export const jokes: Joke[] = [
 		answer: "세대차이",
 	},
 	{
-		question: "겉으로는 눈물을 흘리며 속이 타는 것은?",
-		answer: "촛불",
-	},
-	{
 		question: "세상에서 가장 큰 콩은?",
 		answer: "홍콩",
 	},
@@ -139,10 +135,6 @@ export const jokes: Joke[] = [
 	{
 		question: "세종대왕님이 드시는 우유는?",
 		answer: "아야어여오요우유",
-	},
-	{
-		question: "세상에서 제일 똑똑한 새 이름은?",
-		answer: "하버드",
 	},
 	{
 		question: "집에 있는 사람을 3글자로 하면?",
@@ -241,10 +233,6 @@ export const jokes: Joke[] = [
 		answer: "솔로몬",
 	},
 	{
-		question: "루머 하나 없이 깨끗한 연예인은?",
-		answer: "노사연",
-	},
-	{
 		question: "우주인들이 술 마시는 장소는?",
 		answer: "스페이스바",
 	},
@@ -275,10 +263,6 @@ export const jokes: Joke[] = [
 	{
 		question: "석유의 유통기한은?",
 		answer: "오일",
-	},
-	{
-		question: "머리 아플 때 약을 얼마나 먹을까?",
-		answer: "두통",
 	},
 	{
 		question: "꽃들끼리 전쟁을 하면?",
@@ -345,10 +329,6 @@ export const jokes: Joke[] = [
 		answer: "진주",
 	},
 	{
-		question: "지방흡입의 반대말은?",
-		answer: "수도권배출",
-	},
-	{
 		question: "사람이 죽지 않는 산맥은?",
 		answer: "안데스산맥",
 	},
@@ -389,10 +369,6 @@ export const jokes: Joke[] = [
 		answer: "꼬꼬댁",
 	},
 	{
-		question: "사람의 몸에서도 만들어질 수 있는 기름은?",
-		answer: "개기름",
-	},
-	{
 		question: "지갑에서 100원을 꺼냈다를 3자로 하면?",
 		answer: "아웃백",
 	},
@@ -409,20 +385,12 @@ export const jokes: Joke[] = [
 		answer: "댕기는 곳",
 	},
 	{
-		question: "항상 손님을 뒤에 두고 일하는 사람은?",
-		answer: "자동차 운전기사",
-	},
-	{
 		question: "Head는 머리, Line은 선, 그러면 Headline은?",
 		answer: "가르마",
 	},
 	{
 		question: "호랑이는 영어로 Tiger이다. 이 빠진 호랑이는?",
 		answer: "Tigr",
-	},
-	{
-		question: "편식이 아무리 심한 사람이라도 어쩔 수 없이 먹는 것은?",
-		answer: "나이",
 	},
 	{
 		question: "군대에서 배달 주문을 안 받으려고 하는 피자는?",
@@ -451,10 +419,6 @@ export const jokes: Joke[] = [
 	{
 		question: "스님이 숫자를 6까지 세었다를 4자로?",
 		answer: "식스센스",
-	},
-	{
-		question: "대머리는 투표를 하지 못하는 이유는?",
-		answer: "뽑을 게 없어서",
 	},
 	{
 		question: "칼이 못 들어가는 강은?",
@@ -677,10 +641,6 @@ export const jokes: Joke[] = [
 		answer: "이발소",
 	},
 	{
-		question: "고양이를 싫어하는 동물은?",
-		answer: "미어캣",
-	},
-	{
 		question: "물 없이 할 수 있는 물놀이는?",
 		answer: "사물놀이",
 	},
@@ -699,10 +659,6 @@ export const jokes: Joke[] = [
 	{
 		question: "동생이 형을 매우 잘 따른다를 세 글자로 하면?",
 		answer: "형광펜",
-	},
-	{
-		question: "대통령 선거의 반대말은?",
-		answer: "대통령 앉은 거",
 	},
 	{
 		question: "오리를 생으로 먹으면?",
@@ -745,10 +701,6 @@ export const jokes: Joke[] = [
 		answer: "ICU",
 	},
 	{
-		question: "빌게이츠는 노래방에서 어떻게 노래를 할까?",
-		answer: "마이크로 소프트하게",
-	},
-	{
 		question: "계속 아니라고만 하는 사람은?",
 		answer: "부인",
 	},
@@ -767,10 +719,6 @@ export const jokes: Joke[] = [
 	{
 		question: "독수리가 불에 타면 어떤 소리가 날까?",
 		answer: "이글이글",
-	},
-	{
-		question: "망칠수록 돈을 버는 사람은?",
-		answer: "어부",
 	},
 	{
 		question: "곰돌이 푸가 차에 치이면?",
@@ -807,14 +755,6 @@ export const jokes: Joke[] = [
 	{
 		question: "전화기로 세운 건물은?",
 		answer: "콜로세움",
-	},
-	{
-		question: "63빌딩에서 떨어져도 살 수 있는 비법은?",
-		answer: "1층에서 떨어진다",
-	},
-	{
-		question: "세상에서 가장 예쁜 돌은?",
-		answer: "샤론 스톤",
 	},
 	{
 		question: "야구 선수가 왕한테 공을 던지면서 하는 말은?",
@@ -873,10 +813,6 @@ export const jokes: Joke[] = [
 		answer: "사파이어",
 	},
 	{
-		question: "아마존엔 누가 살까?",
-		answer: "존",
-	},
-	{
 		question: "개가 도서관에 가면 하는 말은?",
 		answer: "책! 책!",
 	},
@@ -897,18 +833,6 @@ export const jokes: Joke[] = [
 		answer: "비올라",
 	},
 	{
-		question: "바닷물이 파란 이유는?",
-		answer: "바위에 부딪혀서 멍이 들었기 때문에",
-	},
-	{
-		question: "실없는 사람에게는 있으나 마나 한 것은?",
-		answer: "바늘",
-	},
-	{
-		question: "항상 마음에 흑심을 품는 것은?",
-		answer: "연필",
-	},
-	{
 		question: "가장 저렴한 사냥도구는?",
 		answer: "파리채",
 	},
@@ -925,28 +849,12 @@ export const jokes: Joke[] = [
 		answer: "캔버스",
 	},
 	{
-		question: "사람의 몸무게가 가장 많이 나갈 때는?",
-		answer: "철들 때",
-	},
-	{
 		question: "아이스크림이 죽은 이유는?",
 		answer: "차가 와서",
 	},
 	{
-		question: "서울이 춥다를 다섯 글자로 하면?",
-		answer: "서울시립대",
-	},
-	{
-		question: "사람들이 항상 지니고 다니는 흉기는?",
-		answer: "머리칼",
-	},
-	{
 		question: "사오정이 다니는 고등학교는?",
 		answer: "뭐라고",
-	},
-	{
-		question: "남 등쳐먹고 사는 사람은?",
-		answer: "안마사",
 	},
 	{
 		question: "바람이 귀엽게 부는 지역은?",
@@ -981,40 +889,12 @@ export const jokes: Joke[] = [
 		answer: "허우적",
 	},
 	{
-		question: "분명 사각형인데 원이라고 하는 것은?",
-		answer: "돈",
-	},
-	{
-		question: "드라큘라가 가장 싫어하는 사람은?",
-		answer: "목에 때 많은 사람",
-	},
-	{
-		question: "사랑하는 남녀가 자고 나면 생기는 것은?",
-		answer: "눈곱",
-	},
-	{
-		question: "사람이 인생 살면서 가장 많이 하는 소리는?",
-		answer: "숨소리",
-	},
-	{
 		question: "다이하드를 한글로 하면?",
 		answer: "사후경직",
 	},
 	{
-		question: "송해 할아버지가 목욕을 하고 나오시면?",
-		answer: "뽀송뽀송해",
-	},
-	{
-		question: "꽁꽁 얼어버린 신발을 소가 신으면?",
-		answer: "소신발언",
-	},
-	{
 		question: "사과가 웃으면?",
 		answer: "풋사과",
-	},
-	{
-		question: "교회에 가면 주는 돈은?",
-		answer: "구원",
 	},
 	{
 		question: "왕과 처음 만날 때 하는 인사는?",
@@ -1041,10 +921,6 @@ export const jokes: Joke[] = [
 		answer: "초고추장",
 	},
 	{
-		question: "제시카 알바가 열심히 일해서 승진하면?",
-		answer: "제시카 정규직",
-	},
-	{
 		question: "세상에서 제일 큰 숫자는?",
 		answer: "많이 (10002 = 만 이)",
 	},
@@ -1059,10 +935,6 @@ export const jokes: Joke[] = [
 	{
 		question: "방금 전까지 펑펑 울던 사람을 다섯 글자로 하면?",
 		answer: "아까운 사람",
-	},
-	{
-		question: "몸에 털이 자란 남자를 부르는 말은?",
-		answer: "모자란 놈",
 	},
 	{
 		question: "덜 뚱뚱한 사람들이 사는 동네는?",
@@ -1080,10 +952,6 @@ export const jokes: Joke[] = [
 		question:
 			"소금, 간장, 참기름이 김밥을 죽였는데 참기름만 경찰서에 간 이유는?",
 		answer: "소금과 간장이 짜서",
-	},
-	{
-		question: "이병헌이 나온 대학은?",
-		answer: "단언컨대",
 	},
 	{
 		question: "못에서 피가 나는 이유는?",
@@ -1170,10 +1038,6 @@ export const jokes: Joke[] = [
 		answer: "소울",
 	},
 	{
-		question: "차가 울면 어떤 소리가 날까?",
-		answer: "잉카",
-	},
-	{
 		question: "11월에 뱀이랑 벌이 없는 이유는?",
 		answer: "노뱀벌",
 	},
@@ -1234,14 +1098,6 @@ export const jokes: Joke[] = [
 		answer: "책피자",
 	},
 	{
-		question: "은행 금고를 1원도 남기지 않고 털면?",
-		answer: "클린턴",
-	},
-	{
-		question: "지니가 노란색이 되면?",
-		answer: "황진이",
-	},
-	{
 		question: "제일 폭발하기 쉬운 나라는?",
 		answer: "부탄",
 	},
@@ -1290,28 +1146,12 @@ export const jokes: Joke[] = [
 		answer: "자원봉사자",
 	},
 	{
-		question: "겨울에 가장 많이 쓰는 끈은?",
-		answer: "따끈따끈",
-	},
-	{
 		question: "제주도 앞바다의 반대말은?",
 		answer: "제주도 엄마다",
 	},
 	{
-		question: "이탈리아의 오늘 날씨는?",
-		answer: "마카로니 (맑아로니)",
-	},
-	{
 		question: "눈사람의 반대말은?",
 		answer: "누운 사람",
-	},
-	{
-		question: "오랜만에 만난 과일은?",
-		answer: "오렌지 (얼마나 오랜지)",
-	},
-	{
-		question: "치과의사가 사는 아파트는?",
-		answer: "이편한세상",
 	},
 	{
 		question: "축구공이 우울한 이유는?",
@@ -1336,5 +1176,249 @@ export const jokes: Joke[] = [
 	{
 		question: "수박을 거꾸로 하면?",
 		answer: "박수",
+	},
+	{
+		question: "숫자 5가 제일 싫어하는 집은?",
+		answer: "오페라 하우스",
+	},
+	{
+		question: "우유가 아프면?",
+		answer: "앙팡",
+	},
+	{
+		question: "산타할아버지가 가장 싫어하는 차는?",
+		answer: "싼타페",
+	},
+	{
+		question: "광부가 가장 많은 나라는?",
+		answer: "케냐 (캐는 나라)",
+	},
+	{
+		question: "엄마가 도둑질하면?",
+		answer: "모서리 (모 + 서리)",
+	},
+	{
+		question: "신이 낳은 아기는?",
+		answer: "갓난아기",
+	},
+	{
+		question: "저팔계가 정육점에 가서 하는 말은?",
+		answer: "저 팔게요",
+	},
+	{
+		question: "학이 침을 뱉으면?",
+		answer: "퇴학",
+	},
+	{
+		question: "떡집 사장이 주식을 안 하는 이유는?",
+		answer: "떡 상할까 봐",
+	},
+	{
+		question: "물고기가 싫어하는 물은?",
+		answer: "그물",
+	},
+	{
+		question: "거북이가 소화제를 먹은 이유는?",
+		answer: "속이 거북해서",
+	},
+	{
+		question: "침묵을 영어로 하면?",
+		answer: "노말 (no 말)",
+	},
+	{
+		question: "가장 정의로운 달은?",
+		answer: "악토벌 (악당 벌)",
+	},
+	{
+		question: "독재를 다섯 글자로 하면?",
+		answer: "나홀로 지배",
+	},
+	{
+		question: "다정함의 반대말은?",
+		answer: "선택장애",
+	},
+	{
+		question: "아이 추워의 반대말은?",
+		answer: "어른 더워",
+	},
+	{
+		question: "달에서 쓰는 언어는?",
+		answer: "문어",
+	},
+	{
+		question: "신발이 화나면?",
+		answer: "신발끈",
+	},
+	{
+		question: "신데렐라가 잠을 못 자면?",
+		answer: "모짜렐라",
+	},
+	{
+		question: "옷이 작으면?",
+		answer: "십자가",
+	},
+	{
+		question: "오래된 다리는?",
+		answer: "구닥다리",
+	},
+	{
+		question: "올라간 용은?",
+		answer: "올라가용",
+	},
+	{
+		question: "땅값이 가장 싼 동네는?",
+		answer: "일원동 (일 원)",
+	},
+	{
+		question: "숫자 중에 화를 제일 많이 내는 숫자는?",
+		answer: "에잇",
+	},
+	{
+		question: "강아지가 짖는 걸 보고 하는 말은?",
+		answer: "지져쓰",
+	},
+	{
+		question: "시가 리얼하면?",
+		answer: "시리얼",
+	},
+	{
+		question: "푸가 넘어지면?",
+		answer: "쿵푸",
+	},
+	{
+		question: "칼이 정색하면?",
+		answer: "검정색",
+	},
+	{
+		question: "동그라미 두 개, 별 두 개면?",
+		answer: "영영이별",
+	},
+	{
+		question: "다이어리를 쓰면 빨리 죽는 이유는?",
+		answer: "Die Early",
+	},
+	{
+		question: "개가 벽을 보고 영어로 한 말은?",
+		answer: "월월 (벽 = Wall)",
+	},
+	{
+		question: "물리치료를 받는 이유는?",
+		answer: "병을 물리치려고",
+	},
+	{
+		question: "가장 잔인한 사람은?",
+		answer: "도끼로 이마까",
+	},
+	{
+		question: "수자원 발전소 소장 이름은?",
+		answer: "무라까와 쓰지마 (물 아까워 쓰지 마)",
+	},
+	{
+		question: "소가 번개를 맞으면?",
+		answer: "우사인볼트",
+	},
+	{
+		question: "노루가 다니는 길은?",
+		answer: "노르웨이",
+	},
+	{
+		question: "피카츄가 담배를 주우면서 하는 말은?",
+		answer: "피까",
+	},
+	{
+		question: "모든 사람을 일어나게 하는 숫자는?",
+		answer: "다섯 (다 서)",
+	},
+	{
+		question: "숫자 4가 운전을 하면?",
+		answer: "사고",
+	},
+	{
+		question: "매일 밤 새는 것은?",
+		answer: "별",
+	},
+	{
+		question: "가장 공부를 못하는 나라는?",
+		answer: "알제리 (알 제리)",
+	},
+	{
+		question: "세상에서 가장 큰 손은?",
+		answer: "만수무강",
+	},
+	{
+		question: "세상에서 가장 아름다운 그림은?",
+		answer: "그림의 떡",
+	},
+	{
+		question: "세상에서 가장 비싼 그림은?",
+		answer: "그리움",
+	},
+	{
+		question: "최고의 진통제는?",
+		answer: "안전",
+	},
+	{
+		question: "가장 사나운 곰은?",
+		answer: "흉곰",
+	},
+	{
+		question: "코끼리가 지나가면?",
+		answer: "아이러니",
+	},
+	{
+		question: "세상에서 가장 오래 사는 새는?",
+		answer: "영원새",
+	},
+	{
+		question: "오리발을 보면 떠오르는 나라는?",
+		answer: "캄보디아",
+	},
+	{
+		question: "읽씹을 제일 많이 당하는 숫자는?",
+		answer: "일십백천만",
+	},
+	{
+		question: "입모양이 S자인 사람은?",
+		answer: "EBS",
+	},
+	{
+		question: "세상에서 가장 행복한 바다는?",
+		answer: "사랑해",
+	},
+	{
+		question: "혀가 거짓말을 할 때 하는 말은?",
+		answer: "전 '혀' 아닙니다",
+	},
+	{
+		question: "땅을 다른 말로 하면?",
+		answer: "지리구요",
+	},
+	{
+		question: "파가 기절하면?",
+		answer: "파김치",
+	},
+	{
+		question: "아이스크림이 가수가 될 수 없는 이유는?",
+		answer: "녹으면 안 되니까",
+	},
+	{
+		question: "예수가 버스에서 내리면?",
+		answer: "신내림",
+	},
+	{
+		question: "가장 기분 좋은 바람은?",
+		answer: "신바람",
+	},
+	{
+		question: "아홉 마리의 개가 알을 낳으면?",
+		answer: "구구단",
+	},
+	{
+		question: "아빠가 두 명이면?",
+		answer: "두부",
+	},
+	{
+		question: "펭귄이 다니는 고등학교는?",
+		answer: "냉장고",
 	},
 ];

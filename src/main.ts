@@ -22,15 +22,15 @@ function escapeHtml(text: string): string {
 		.replace(/"/g, "&quot;");
 }
 
-function createCardHtml(joke: IndexedJoke): string {
+function createCardHtml(joke: IndexedJoke, batchPos: number): string {
 	return `
-    <div class="card" tabindex="0" role="button" aria-expanded="false">
-      <div class="card-meta">
-        <span class="card-number">#${joke.originalIndex + 1}</span>
+    <div class="card" tabindex="0" role="button" aria-expanded="false" style="--i:${batchPos}">
+      <span class="card-number">${joke.originalIndex + 1}</span>
+      <div>
+        <div class="question">${escapeHtml(joke.question)}</div>
+        <div class="answer-wrap"><div class="answer">${escapeHtml(joke.answer)}</div></div>
       </div>
-      <div class="question">${escapeHtml(joke.question)}</div>
-      <div class="answer">${escapeHtml(joke.answer)}</div>
-      <div class="hint">클릭하면 정답!</div>
+      <svg class="ico card-toggle" aria-hidden="true"><use href="#i-plus" /></svg>
     </div>`;
 }
 
@@ -44,7 +44,7 @@ function renderBatch(container: HTMLElement) {
 	for (let i = currentIndex; i < end; i++) {
 		const joke = displayJokes[i];
 		if (!joke) continue;
-		temp.innerHTML = createCardHtml(joke);
+		temp.innerHTML = createCardHtml(joke, i - currentIndex);
 		const card = temp.firstElementChild as HTMLElement;
 		const toggle = () => {
 			card.classList.toggle("revealed");
@@ -71,21 +71,6 @@ function renderBatch(container: HTMLElement) {
 	}
 
 	currentIndex = end;
-	updateLoadingIndicator(container);
-}
-
-function updateLoadingIndicator(container: HTMLElement) {
-	const sentinel = container.querySelector(".scroll-sentinel");
-	if (!sentinel) return;
-
-	if (currentIndex >= displayJokes.length) {
-		sentinel.textContent = "";
-		(sentinel as HTMLElement).style.display = "none";
-		if (observer) observer.unobserve(sentinel);
-	} else {
-		sentinel.textContent = "Loading...";
-		(sentinel as HTMLElement).style.display = "block";
-	}
 }
 
 function setupInfiniteScroll(container: HTMLElement) {
@@ -95,9 +80,6 @@ function setupInfiniteScroll(container: HTMLElement) {
 	if (!sentinel) {
 		sentinel = document.createElement("div");
 		sentinel.className = "scroll-sentinel";
-		(sentinel as HTMLElement).style.textAlign = "center";
-		(sentinel as HTMLElement).style.padding = "2rem";
-		(sentinel as HTMLElement).style.opacity = "0.7";
 		container.appendChild(sentinel);
 	}
 
@@ -113,7 +95,6 @@ function setupInfiniteScroll(container: HTMLElement) {
 	);
 
 	observer.observe(sentinel);
-	updateLoadingIndicator(container);
 }
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -136,7 +117,7 @@ function shuffle() {
 }
 
 // --- Search ---
-function resetCards(filtered: IndexedJoke[]) {
+function resetCards(filtered: IndexedJoke[], query = "") {
 	const container = document.getElementById("cards");
 	if (!container) return;
 
@@ -148,10 +129,11 @@ function resetCards(filtered: IndexedJoke[]) {
 	currentIndex = 0;
 
 	if (filtered.length === 0) {
-		if (sentinel) (sentinel as HTMLElement).textContent = "";
-		const msg = document.createElement("div");
+		const msg = document.createElement("p");
 		msg.className = "no-results";
-		msg.textContent = "검색 결과 없음";
+		const term = document.createElement("strong");
+		term.textContent = query;
+		msg.append("‘", term, "’에 맞는 개그가 없어요. 다른 말로 검색해 보세요.");
 		container.insertBefore(msg, sentinel);
 		return;
 	}
@@ -177,7 +159,7 @@ function search(query: string) {
 	);
 
 	if (countEl) countEl.textContent = `${filtered.length}개`;
-	resetCards(filtered);
+	resetCards(filtered, query.trim());
 }
 
 // --- Random ---
@@ -198,7 +180,8 @@ function showRandom() {
 		const btn = document.createElement("button");
 		btn.type = "button";
 		btn.className = "inline-random-btn";
-		btn.textContent = "🎲 다음 랜덤";
+		btn.innerHTML =
+			'<svg class="ico" aria-hidden="true"><use href="#i-dice-five" /></svg>다음 랜덤';
 		btn.addEventListener("click", showRandom);
 		const sentinel = container.querySelector(".scroll-sentinel");
 		if (sentinel) {
@@ -217,12 +200,6 @@ function setDarkMode(dark: boolean) {
 		document.documentElement.setAttribute("data-theme", "dark");
 	} else {
 		document.documentElement.removeAttribute("data-theme");
-	}
-
-	const icon = document.querySelector<HTMLElement>(".dark-toggle-icon");
-	if (icon) {
-		icon.innerHTML = dark ? "&#x1F319;" : "&#x2600;&#xFE0F;";
-		icon.style.visibility = "visible";
 	}
 
 	try {
@@ -317,19 +294,17 @@ if (searchClearBtn) {
 // Random
 document.getElementById("random-btn")?.addEventListener("click", showRandom);
 
-// Scroll-to-top
+// Scroll-to-top: show once the intro line has scrolled above the viewport
 const scrollTopBtn = document.getElementById("scroll-top");
-if (scrollTopBtn) {
-	let ticking = false;
-	window.addEventListener("scroll", () => {
-		if (!ticking) {
-			requestAnimationFrame(() => {
-				scrollTopBtn.classList.toggle("visible", window.scrollY > 400);
-				ticking = false;
-			});
-			ticking = true;
-		}
-	});
+const introEl = document.getElementById("intro");
+if (scrollTopBtn && introEl) {
+	new IntersectionObserver(([entry]) => {
+		if (!entry) return;
+		scrollTopBtn.classList.toggle(
+			"visible",
+			!entry.isIntersecting && entry.boundingClientRect.top < 0,
+		);
+	}).observe(introEl);
 	scrollTopBtn.addEventListener("click", () => {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	});

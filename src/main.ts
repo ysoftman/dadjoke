@@ -131,6 +131,8 @@ function resetCards(filtered: IndexedJoke[], query = "") {
 	if (filtered.length === 0) {
 		const msg = document.createElement("p");
 		msg.className = "no-results";
+		msg.innerHTML =
+			'<svg class="ico" aria-hidden="true"><use href="#i-magnifying-glass" /></svg>';
 		const term = document.createElement("strong");
 		term.textContent = query;
 		msg.append("‘", term, "’에 맞는 개그가 없어요. 다른 말로 검색해 보세요.");

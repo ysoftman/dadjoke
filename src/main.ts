@@ -267,7 +267,7 @@ if (searchCountEl) searchCountEl.textContent = `${allJokes.length}개`;
 
 // Version
 const versionEl = document.getElementById("version");
-if (versionEl) versionEl.textContent = __APP_VERSION__;
+if (versionEl) versionEl.textContent = process.env.PUBLIC_APP_VERSION ?? "";
 
 // Shuffle
 document.querySelector(".shuffle-btn")?.addEventListener("click", shuffle);

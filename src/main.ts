@@ -13,6 +13,7 @@ const BATCH_SIZE = 20;
 let displayJokes: IndexedJoke[] = [...allJokes];
 let currentIndex = 0;
 let observer: IntersectionObserver | null = null;
+let debounceTimer: ReturnType<typeof setTimeout> | undefined;
 
 function escapeHtml(text: string): string {
 	return text
@@ -84,10 +85,13 @@ function setupInfiniteScroll(container: HTMLElement) {
 	}
 
 	observer = new IntersectionObserver(
-		(entries) => {
+		(entries, obs) => {
 			for (const entry of entries) {
 				if (entry.isIntersecting && currentIndex < displayJokes.length) {
 					renderBatch(container);
+					// Re-observe: a sentinel that stays in view fires no new callback
+					obs.unobserve(entry.target);
+					obs.observe(entry.target);
 				}
 			}
 		},
@@ -106,9 +110,17 @@ function shuffleArray<T>(arr: T[]): T[] {
 	return shuffled;
 }
 
+// Also cancels a pending debounced search so it can't overwrite the new list
+function clearSearchInput() {
+	clearTimeout(debounceTimer);
+	const input = document.getElementById("search") as HTMLInputElement | null;
+	if (input) input.value = "";
+	const clearBtn = document.getElementById("search-clear");
+	if (clearBtn) clearBtn.hidden = true;
+}
+
 function shuffle() {
-	const searchInput = document.getElementById("search") as HTMLInputElement;
-	if (searchInput) searchInput.value = "";
+	clearSearchInput();
 	const countEl = document.getElementById("search-count");
 	if (countEl) countEl.textContent = `${allJokes.length}개`;
 
@@ -135,7 +147,9 @@ function resetCards(filtered: IndexedJoke[], query = "") {
 			'<svg class="ico" aria-hidden="true"><use href="#i-magnifying-glass" /></svg>';
 		const term = document.createElement("strong");
 		term.textContent = query;
-		msg.append("‘", term, "’에 맞는 개그가 없어요. 다른 말로 검색해 보세요.");
+		const text = document.createElement("span");
+		text.append("‘", term, "’에 맞는 개그가 없어요. 다른 말로 검색해 보세요.");
+		msg.append(text);
 		container.insertBefore(msg, sentinel);
 		return;
 	}
@@ -170,8 +184,7 @@ function showRandom() {
 	const joke = allJokes[idx];
 	if (!joke) return;
 
-	const searchInput = document.getElementById("search") as HTMLInputElement;
-	if (searchInput) searchInput.value = "";
+	clearSearchInput();
 	const countEl = document.getElementById("search-count");
 	if (countEl) countEl.textContent = "1개";
 
@@ -179,18 +192,21 @@ function showRandom() {
 
 	const container = document.getElementById("cards");
 	if (container) {
-		const btn = document.createElement("button");
-		btn.type = "button";
-		btn.className = "inline-random-btn";
-		btn.innerHTML =
-			'<svg class="ico" aria-hidden="true"><use href="#i-dice-five" /></svg>다음 랜덤';
-		btn.addEventListener("click", showRandom);
-		const sentinel = container.querySelector(".scroll-sentinel");
-		if (sentinel) {
-			container.insertBefore(btn, sentinel);
-		} else {
-			container.appendChild(btn);
-		}
+		const actions = document.createElement("div");
+		actions.className = "random-actions";
+		actions.innerHTML =
+			'<button type="button" class="inline-random-btn"><svg class="ico" aria-hidden="true"><use href="#i-dice-five" /></svg>다음 랜덤</button>' +
+			'<button type="button" class="inline-back-btn">전체 보기</button>';
+		actions
+			.querySelector(".inline-random-btn")
+			?.addEventListener("click", showRandom);
+		actions
+			.querySelector(".inline-back-btn")
+			?.addEventListener("click", () => search(""));
+		container.insertBefore(
+			actions,
+			container.querySelector(".scroll-sentinel"),
+		);
 	}
 
 	window.scrollTo({ top: 0 });
@@ -276,7 +292,6 @@ document.querySelector(".shuffle-btn")?.addEventListener("click", shuffle);
 const searchInput = document.getElementById("search") as HTMLInputElement;
 const searchClearBtn = document.getElementById("search-clear");
 if (searchInput) {
-	let debounceTimer: ReturnType<typeof setTimeout>;
 	searchInput.addEventListener("input", () => {
 		clearTimeout(debounceTimer);
 		debounceTimer = setTimeout(() => search(searchInput.value), 200);
@@ -285,11 +300,8 @@ if (searchInput) {
 }
 if (searchClearBtn) {
 	searchClearBtn.addEventListener("click", () => {
-		if (searchInput) {
-			searchInput.value = "";
-			search("");
-		}
-		searchClearBtn.hidden = true;
+		clearSearchInput();
+		search("");
 	});
 }
 

@@ -1421,4 +1421,8 @@ export const jokes: Joke[] = [
 		question: "펭귄이 다니는 고등학교는?",
 		answer: "냉장고",
 	},
+	{
+		question: "모자 사이에 사는 신은?",
+		answer: "캡사이신 (cap 사이 신)",
+	},
 ];
